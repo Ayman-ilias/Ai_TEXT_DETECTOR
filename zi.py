@@ -36,15 +36,14 @@ contractions = {
 def clean_text(text):
     text = text.lower()
 
-    # Remove specified tags
     tags=['\n','\'']
     for tag in tags:
         text=text.replace(tag,'')
 
-    # Remove punctuation
+ 
     text=''.join([char for char in text if char not in string.punctuation])
 
-    # Expand contractions
+    
     for contraction, expanded in contractions.items():
         text=text.replace(contraction,expanded)
 
